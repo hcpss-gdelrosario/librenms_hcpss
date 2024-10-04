@@ -1618,7 +1618,7 @@ function list_oxidized(Illuminate\Http\Request $request)
     /** @var Device $device */
     foreach ($devices as $device) {
         $output = [
-            'hostname' => $device->hostname,
+            'hostname' => $device->sysName, //return SNMP sysName instead of IP for hosts without DNS entries
             'os' => $device->os,
             'ip' => $device->ip,
         ];
